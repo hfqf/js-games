@@ -1,0 +1,10 @@
+#h {
+ background-color: #00eaff;
+}
+
+.counter{
+    display: flex;
+    background-color: antiquewhite;
+    height: 100%;
+    flex-direction: row;
+}
