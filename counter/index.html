@@ -4,91 +4,89 @@
 <meta charset="utf-8">
 <title>迷你计算器</title>
 <link rel="stylesheet" type="text/css" href="./css/display.css">
-</head>
 <script src="./js/counter.js" type="text/javascript" charset="utf-8"></script>
 <script src="./js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
 
 <body>
-
-
 <div class="counter">
-    <div class="display">
-    00-00-00
+    <div class="display" id="display">
+    00-00
     </div>
 
     <div class="control">
         <div class="section1">
-            <div class="btn"  id="btn_submit">
+            <div class="btn"  id="btn_clear">
                 AC
             </div>
-            <div class="btn">
+            <div class="btn" id="btn_del">
                 Del
             </div>
-            <div class="btn">
+            <div class="btn" id="btn_percent">
                 %
             </div>
-            <div class="btn">
+            <div class="btn" id="btn_multi">
                 *
             </div>
         </div>
         <div class="section2">
             <div class="section3">
                 <div class="btn-cell">
-                    <div class="number">
+                    <div class="number" id="btn_7">
                         7
                     </div>
-                    <div class="number">
+                    <div class="number" id="btn_8">
                         8
                     </div>
-                    <div class="number">
+                    <div class="number" id="btn_9">
                         9
                     </div>
                 </div>
                 <div class="btn-cell">
-                    <div class="number">
+                    <div class="number" id="btn_4">
                         4
                     </div>
-                    <div class="number">
+                    <div class="number" id="btn_5">
                         5
                     </div>
-                    <div class="number">
+                    <div class="number" id="btn_6">
                         6
                     </div>
                 </div>
                 <div class="btn-cell">
-                    <div class="number">
+                    <div class="number" id="btn_1">
                         1
                     </div>
-                    <div class="number">
+                    <div class="number" id="btn_2">
                         2
                     </div>
-                    <div class="number">
+                    <div class="number" id="btn_3">
                         3
                     </div>
                 </div>
                 <div class="btn-cell">
-                    <div class="number">
+                    <div class="number" id="btn_0">
                         0
                     </div>
-                    <div class="number">
+                    <div class="number" id="btn_point">
                         .
                     </div>
-                    <div class="number">
-                        .
+                    <div class="number" id="btn_empty">
+                        
                     </div>
                 </div>
             </div>
             <div class="section4">
-                <div class="btn">
+                <div class="btn" id="btn_divide">
                     /
                 </div>
-                <div class="btn">
+                <div class="btn" id="btn_add">
                     +
                 </div>
-                <div class="btn">
+                <div class="btn" id="btn_minus">
                     -
                 </div>
-                <div class="btn">
+                <div class="btn" id="btn_equal">
                     =
                 </div>
             </div>
@@ -98,10 +96,101 @@
 </div>        
 </body>
 <script>
+
     $(document).ready(function(){
-      $("btn_submit").click(function(){
-        counter.add()
+      var counter = new Counter()
+      $("#btn_clear").click(function(){
+        $("#btn_clear").css("font-size", "40pt");
+         
+        var v = counter.clear()
       });
+
+      $("#btn_del").click(function(){
+        var v = counter.clear()
+      });
+
+      $("#btn_percent").click(function(){
+        var v = counter.clear()
+      });
+
+      $("#btn_multi").click(function(){
+        var v = counter.clear()
+      });
+      
+      $("#btn_7").click(function(){
+        var v = counter.inputNumber(7)
+        $("#btn_7").css("font-size", "40pt");
+        $("#display").text(v)
+      });
+
+      $("#btn_8").click(function(){
+        var v = counter.inputNumber(8)
+        $("#btn_7").css("font-size", "40pt");
+        $("#display").text(v)
+      });
+
+      $("#btn_9").click(function(){
+        var v = counter.inputNumber(9)
+        $("#btn_7").css("font-size", "40pt");
+        $("#display").text(v)
+      });
+
+      $("#btn_4").click(function(){
+        var v = counter.inputNumber(4)
+        $("#btn_7").css("font-size", "40pt");
+        $("#display").text(v)
+      });
+
+      $("#btn_5").click(function(){
+        var v = counter.inputNumber(5)
+        $("#btn_7").css("font-size", "40pt");
+        $("#display").text(v)
+      });
+
+      $("#btn_6").click(function(){
+        var v = counter.inputNumber(6)
+        $("#btn_7").css("font-size", "40pt");
+        $("#display").text(v)
+      });
+
+      $("#btn_1").click(function(){
+        var v = counter.inputNumber(1)
+        $("#btn_7").css("font-size", "40pt");
+        $("#display").text(v)
+      });
+
+      $("#btn_2").click(function(){
+        var v = counter.inputNumber(2)
+        $("#btn_7").css("font-size", "40pt");
+        $("#display").text(v)
+      });
+
+      $("#btn_3").click(function(){
+        var v = counter.inputNumber(3)
+        $("#btn_7").css("font-size", "40pt");
+        $("#display").text(v)
+      });
+
+      $("#btn_0").click(function(){
+        var v = counter.inputNumber(0)
+        $("#btn_7").css("font-size", "40pt");
+        $("#display").text(v)
+      });
+
+      $("#btn_point").click(function(){
+        var v = counter.inputPoint()
+        $("#btn_7").css("font-size", "40pt");
+        $("#display").text(v)
+      });
+
+      $("#btn_empty").click(function(){
+        var v = counter.clear()
+      });
+
+      $("#btn_equal").click(function(){
+        var v = counter.clear()
+      });
+
     });
 </script>
 
