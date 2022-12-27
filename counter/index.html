@@ -4,30 +4,105 @@
 <meta charset="utf-8">
 <title>迷你计算器</title>
 <link rel="stylesheet" type="text/css" href="./css/display.css">
-<link rel="stylesheet" type="text/css" href="./css/control.css">
 </head>
-<body>
-<div class="display">
+<script src="./js/counter.js" type="text/javascript" charset="utf-8"></script>
+<script src="./js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 
-</div>
+<body>
+
 
 <div class="counter">
+    <div class="display">
+    00-00-00
+    </div>
+
     <div class="control">
         <div class="section1">
-            <div>
+            <div class="btn"  id="btn_submit">
                 AC
+            </div>
+            <div class="btn">
+                Del
+            </div>
+            <div class="btn">
+                %
+            </div>
+            <div class="btn">
+                *
             </div>
         </div>
         <div class="section2">
-            
+            <div class="section3">
+                <div class="btn-cell">
+                    <div class="number">
+                        7
+                    </div>
+                    <div class="number">
+                        8
+                    </div>
+                    <div class="number">
+                        9
+                    </div>
+                </div>
+                <div class="btn-cell">
+                    <div class="number">
+                        4
+                    </div>
+                    <div class="number">
+                        5
+                    </div>
+                    <div class="number">
+                        6
+                    </div>
+                </div>
+                <div class="btn-cell">
+                    <div class="number">
+                        1
+                    </div>
+                    <div class="number">
+                        2
+                    </div>
+                    <div class="number">
+                        3
+                    </div>
+                </div>
+                <div class="btn-cell">
+                    <div class="number">
+                        0
+                    </div>
+                    <div class="number">
+                        .
+                    </div>
+                    <div class="number">
+                        .
+                    </div>
+                </div>
+            </div>
+            <div class="section4">
+                <div class="btn">
+                    /
+                </div>
+                <div class="btn">
+                    +
+                </div>
+                <div class="btn">
+                    -
+                </div>
+                <div class="btn">
+                    =
+                </div>
+            </div>
         </div>
-        <div class="section3">
-            
-        </div>
+
     </div>
 </div>        
-
-
 </body>
-<script src="./js/logic.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    $(document).ready(function(){
+      $("btn_submit").click(function(){
+        counter.add()
+      });
+    });
+</script>
+
 </html>

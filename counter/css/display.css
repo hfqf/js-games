@@ -1,10 +1,93 @@
-#h {
- background-color: #00eaff;
-}
+
 
 .counter{
     display: flex;
     background-color: antiquewhite;
-    height: 100%;
+    height: 100rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.display{
+   text-align: right;
+   padding: 10pt;
+   margin-top: 10pt;
+   width: 94%;
+   border-radius: 5px; 
+   border: 2pt;
+   border-style:ridge;
+   font-weight: 300;
+   font-size: 50pt;
+}
+
+.control{
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10pt;
+    margin-top: 10pt;
+    width: 94%;
+    border-radius: 2px; 
+    border: 2pt;
+    border-style: groove;
+}
+
+.control .section1 {
+    display: flex;
+    align-items: center;
     flex-direction: row;
+}
+
+.control .section2 {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.control .section3 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.control .section3 .btn-cell{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.control .btn{
+    width: 120pt;
+    height: 120pt;
+    margin-left: 1pt;
+    margin-top: 1pt;
+    background-color: darkorange;
+    border-radius: 2px; 
+    border: 2pt;
+    border-style: groove;
+    text-align: center;
+    vertical-align: middle ;
+    line-height:120pt;
+    font-weight: 400;
+    font-size: 30pt;
+    color: aliceblue;
+}
+
+.control .number{
+    width: 120pt;
+    height: 120pt;
+    margin-left: 1pt;
+    margin-top: 1pt;
+    background-color: cornflowerblue;
+    border-radius: 2px; 
+    border: 2pt;
+    border-style: groove;
+    text-align: center;
+    vertical-align: middle ;
+    line-height:120pt;
+    font-weight: 400;
+    font-size: 30pt;
+    color: aliceblue;
 }
