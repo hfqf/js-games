@@ -33,8 +33,15 @@ Counter.prototype.inputNumber=function(number){
         this.op==2||
         this.op==3||
         this.op==4){
-        this.willOpValue +=0
-        return this.willOpValue
+            var temp = this.willOpValue.toString()
+            if(temp.includes(".")){
+                temp=temp+number.toString()
+                this.willOpValue=temp
+            }else{
+                this.willOpValue=(this.willOpValue*10)
+                this.willOpValue+=number
+            }
+            return this.willOpValue
     }
     this.print()
     return 0
@@ -55,8 +62,14 @@ Counter.prototype.inputPoint=function(){
         this.op==2||
         this.op==3||
         this.op==4){
-        this.willOpValue +=0
-        return this.willOpValue
+            var temp = parseFloat(this.willOpValue).toString()
+            if(temp.includes(".")){
+                return this.willOpValue
+            }else{
+                temp=temp+'.'
+                this.willOpValue=temp
+            }
+            return this.willOpValue
     }
     this.print()
     return 0
@@ -69,21 +82,42 @@ Counter.prototype.add=function(){
 }
 
 Counter.prototype.minus=function(){
+    this.op = 2
     this.print()
     return this.currentValue
 }
 
 Counter.prototype.multi=function(){
+    this.op = 3
     this.print()
     return this.currentValue
 }
 
 Counter.prototype.divide=function(){
-    console.log(this.value)
+    this.op = 4
+    this.print()
     return this.currentValue
 }
 
 Counter.prototype.equal=function(){
+    this.currentValue = parseFloat(this.currentValue)
+    this.willOpValue = parseFloat(this.willOpValue)
+    this.print()
+    if(this.op==0){
+
+    }else if(this.op==1){
+        this.currentValue +=this.willOpValue
+    }else if(this.op==2){
+        this.currentValue -=this.willOpValue
+    }else if(this.op==3){
+        this.currentValue *=this.willOpValue
+    }else if(this.op==4){
+        this.currentValue /=this.willOpValue
+    }else{
+
+    }
+    this.willOpValue = 0
+    this.op = 0
     this.print()
     return this.currentValue
 }
@@ -96,10 +130,41 @@ Counter.prototype.clear=function(){
     return this.currentValue
 }
 
-Counter.prototype.del=function(){
+Counter.prototype.setPositiveOrNegative=function(){
+    if(this.op==0){
+        this.currentValue *=-1
+        this.print()
+        return this.currentValue
+    }else if(
+        this.op==1||
+        this.op==2||
+        this.op==3||
+        this.op==4){
+        this.willOpValue *=-1
+        this.print()
+        return this.willOpValue
+    }
     this.print()
-    return this.currentValue
+    return 0
 }
+
+Counter.prototype.percent=function(){
+    if(this.op==0){
+        this.currentValue /=100
+        this.print()
+        return this.currentValue
+    }else if(
+        this.op==1||
+        this.op==2||
+        this.op==3||
+        this.op==4){
+        this.willOpValue /=100
+        this.print()
+        return this.willOpValue
+    }
+    return 0
+}
+
 
 
 

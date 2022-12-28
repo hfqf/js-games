@@ -11,16 +11,16 @@
 <body>
 <div class="counter">
     <div class="display" id="display">
-    00-00
+    00
     </div>
 
     <div class="control">
         <div class="section1">
             <div class="btn"  id="btn_clear">
-                AC
+                C
             </div>
-            <div class="btn" id="btn_del">
-                Del
+            <div class="btn" id="btn_porn">
+                +/-
             </div>
             <div class="btn" id="btn_percent">
                 %
@@ -65,15 +65,13 @@
                     </div>
                 </div>
                 <div class="btn-cell">
-                    <div class="number" id="btn_0">
+                    <div class="number0" id="btn_0">
                         0
                     </div>
                     <div class="number" id="btn_point">
                         .
                     </div>
-                    <div class="number" id="btn_empty">
                         
-                    </div>
                 </div>
             </div>
             <div class="section4">
@@ -100,97 +98,123 @@
     $(document).ready(function(){
       var counter = new Counter()
       $("#btn_clear").click(function(){
-        $("#btn_clear").css("font-size", "40pt");
-         
+        resetBtn("btn_clear")
         var v = counter.clear()
+        $("#display").text(v)
       });
 
-      $("#btn_del").click(function(){
-        var v = counter.clear()
+      $("#btn_porn").click(function(){
+        resetBtn("btn_porn")
+        var v = counter.setPositiveOrNegative()
+        $("#display").text(v)
       });
 
       $("#btn_percent").click(function(){
-        var v = counter.clear()
+        var v = counter.percent()
+        resetBtn("btn_percent")
+        $("#display").text(v)
       });
 
       $("#btn_multi").click(function(){
-        var v = counter.clear()
+        var v = counter.multi()
+      });
+
+      $("#btn_divide").click(function(){
+        var v = counter.divide()
+      });
+
+      $("#btn_add").click(function(){
+        var v = counter.add()
+      });
+
+      $("#btn_minus").click(function(){
+        var v = counter.minus()
       });
       
       $("#btn_7").click(function(){
         var v = counter.inputNumber(7)
-        $("#btn_7").css("font-size", "40pt");
+        resetBtn("btn_7")
         $("#display").text(v)
       });
 
       $("#btn_8").click(function(){
         var v = counter.inputNumber(8)
-        $("#btn_7").css("font-size", "40pt");
+        resetBtn("btn_8")
         $("#display").text(v)
       });
 
       $("#btn_9").click(function(){
         var v = counter.inputNumber(9)
-        $("#btn_7").css("font-size", "40pt");
+        resetBtn("btn_9")
         $("#display").text(v)
       });
 
       $("#btn_4").click(function(){
         var v = counter.inputNumber(4)
-        $("#btn_7").css("font-size", "40pt");
+        resetBtn("btn_4")
         $("#display").text(v)
       });
 
       $("#btn_5").click(function(){
         var v = counter.inputNumber(5)
-        $("#btn_7").css("font-size", "40pt");
+        resetBtn("btn_5")
         $("#display").text(v)
       });
 
       $("#btn_6").click(function(){
         var v = counter.inputNumber(6)
-        $("#btn_7").css("font-size", "40pt");
+        resetBtn("btn_6")
         $("#display").text(v)
       });
 
       $("#btn_1").click(function(){
         var v = counter.inputNumber(1)
-        $("#btn_7").css("font-size", "40pt");
+        resetBtn("btn_1")
         $("#display").text(v)
       });
 
       $("#btn_2").click(function(){
         var v = counter.inputNumber(2)
-        $("#btn_7").css("font-size", "40pt");
+        resetBtn("btn_2")
         $("#display").text(v)
       });
 
       $("#btn_3").click(function(){
         var v = counter.inputNumber(3)
-        $("#btn_7").css("font-size", "40pt");
+        resetBtn("btn_3")
         $("#display").text(v)
       });
 
       $("#btn_0").click(function(){
         var v = counter.inputNumber(0)
-        $("#btn_7").css("font-size", "40pt");
+        resetBtn("btn_0")
         $("#display").text(v)
       });
 
       $("#btn_point").click(function(){
         var v = counter.inputPoint()
-        $("#btn_7").css("font-size", "40pt");
+        resetBtn("btn_point")
         $("#display").text(v)
       });
 
       $("#btn_empty").click(function(){
-        var v = counter.clear()
+        
       });
 
       $("#btn_equal").click(function(){
-        var v = counter.clear()
+        var v = counter.equal()
+        resetBtn("btn_equal")
+        $("#display").text(v)
       });
 
+      //页面控制方法
+      function resetBtn(divId){
+        $("#"+divId).css("font-size", "40pt");
+        var timer = setTimeout(function(){
+            $("#"+divId).css("font-size", "30pt");
+            timer = null
+        },600)
+      }
     });
 </script>
 
